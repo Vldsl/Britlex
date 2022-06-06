@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+	head
+	//- include html/head
+	@@include('html/head.pug', {
+		"title": "Britlex"
+	})
+	body(style="background-color: #fff;")
+		//- include html/sprite
+		.wrapper
+			include html/header
+			main.page
+				include html/intro
+			include html/footer
+		script(src="js/app.min.js")

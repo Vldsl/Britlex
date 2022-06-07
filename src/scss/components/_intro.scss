@@ -1,2 +1,167 @@
 .intro {
+	padding: rem(130) 0 0 0;
+
+	&__container {
+		display: flex;
+
+		@include mq("tablet-small") {
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		@include mq("tablet-small", max) {
+			flex-direction: column-reverse;
+			justify-content: center;
+		}
+	}
+
+	&__content {
+		flex: 0 0 40%;
+
+		@include mq("desktop-wide") {
+			flex: 0 0 40%;
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			flex: 0 0 rem(420);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			flex: 0 0 45%;
+		}
+	}
+
+	&__title {
+		font-weight: 600;
+		line-height: 1.25;
+		color: #000000;
+
+		@include mq("desktop-wide") {
+			margin: 0 0 rem(40) 0;
+			font-size: rem(64);
+		}
+
+		@include mq("desktop", range, "desktop-wide") {
+			font-size: rem(56);
+		}
+
+		@include mq("tablet", range, "desktop") {
+			font-size: rem(48);
+		}
+
+		@include mq("phablet", range, "desktop-wide") {
+			margin: 0 0 rem(25) 0;
+		}
+
+		@include mq("phablet", range, "tablet") {
+			font-size: rem(35);
+		}
+
+		@include mq("phablet", max) {
+			margin: 0 0 rem(20) 0;
+			font-size: rem(24);
+		}
+
+		position: relative;
+
+		&::after {
+			content: "\e900";
+			position: absolute;
+			top: 41%;
+			right: 0;
+			@extend %ic;
+			font-size: rem(110);
+
+			@include mq("tablet", range, "desktop-wide") {
+				font-size: rem(100);
+			}
+
+			@include mq("tablet-small", range, "tablet") {
+				top: 30%;
+				font-size: rem(100);
+			}
+
+			@include mq("tablet-small", max) {
+				display: none;
+			}
+		}
+
+		& br {
+			display: none;
+
+			@include mq("tablet-small") {
+				display: block;
+			}
+		}
+	}
+
+	&__text {
+		color: #8F95A5;
+		line-height: 1.5;
+
+		@include mq("desktop-wide") {
+			margin: 0 0 rem(60) 0;
+			font-size: rem(24);
+		}
+
+		@include mq("desktop-wide", max) {
+			margin: 0 0 rem(33) 0;
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			font-size: rem(20);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			font-size: rem(16);
+		}
+
+		@include mq("phablet", max) {
+			font-size: rem(14);
+		}
+
+	}
+
+	&__link {
+		line-height: 1.5;
+
+		@include mq("desktop-wide") {
+			border-radius: 15px;
+			font-size: rem(36);
+			padding: rem(32) rem(117);
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			font-size: rem(24);
+			padding: rem(22) rem(78);
+		}
+
+		@include mq("phablet", range, "tablet") {
+			font-size: rem(18);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			padding: rem(19) rem(67);
+		}
+
+		@include mq("phablet", range, "tablet-small") {
+			padding: rem(24) rem(102);
+		}
+
+		@include mq("phablet", max) {
+			font-size: rem(16);
+			padding: rem(18) 0;
+			width: 100%;
+		}
+	}
+
+	&__img {
+		@include mq("desktop", range, "desktop-wide") {
+			width: 40%;
+		}
+
+		@include mq("tablet-small", range, "desktop") {
+			width: 45%;
+		}
+	}
 }

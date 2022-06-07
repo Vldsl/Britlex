@@ -9,12 +9,13 @@
 
 /*--------------------*/
 /*** Fonts ***/
-// @import "fonts";
-// @import "iconsfont";
+@import "fonts/fonts";
+@import "fonts/icons";
+
 /*--------------------*/
 body {
 	font-family: $fontFamily;
-	@include font-source-sans(rem($fontSize), 1.1, 400, $primaryColor);
+	@include font-source-sans(rem($fontSize), math.div(24, 16), 400, $primaryColor);
 	font-style: normal;
 	text-align: left;
 	position: relative;
@@ -41,21 +42,96 @@ body {
 	// }
 }
 
-.container,
 [class*="__container"] {
 	width: 100%;
-	max-width: rem($maxWidthContainer);
+	max-width: rem(1165);
 	margin: auto;
-	padding: 0 rem(math.div($containerPadding, 2));
+	padding: 0 rem(15);
+
+	@include mq("desktop-wide") {
+		max-width: rem(1600);
+		padding: 0 rem(30);
+	}
+}
+
+.page {
+	&-title {
+		font-weight: 600;
+		color: #000000;
+		line-height: 1.5;
+
+		@include mq("desktop-wide") {
+			font-size: rem(48);
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			font-size: rem(36);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			font-size: rem(30);
+		}
+	}
+
+	&-link {
+		font-weight: 500;
+		line-height: 1.5;
+		color: #FFFFFF;
+		background: #263238;
+		border-radius: 5px;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		@include mq("desktop-wide") {
+			font-size: rem(20);
+			padding: rem(15) rem(50);
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			font-size: rem(18);
+			padding: rem(15) rem(46);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			font-size: rem(16);
+		}
+
+		@include mq("tablet-small", max) {
+			font-size: rem(14);
+		}
+
+		@include mq("phablet", range, "tablet-small") {
+			padding: rem(14) 0;
+			width: 100%;
+		}
+
+		@include mq("tablet", max) {
+			padding: rem(14) rem(43);
+		}
+
+	}
 }
 
 section {
 	width: 100%;
-	// padding: rem(50) 0;
 
-	// background-position: center;
-	// background-size: cover;
-	// background-repeat: no-repeat;
+	@include mq("desktop-wide") {
+		margin: 0 0 rem(150) 0;
+	}
+
+	@include mq("tablet", range, "desktop-wide") {
+		margin: 0 0 rem(100) 0;
+	}
+
+	@include mq("tablet-small", range, "tablet") {
+		margin: 0 0 rem(80) 0;
+	}
+
+	@include mq("tablet-small", max) {
+		margin: 0 0 rem(50) 0;
+	}
 }
 
 @import "components/header";

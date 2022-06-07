@@ -1,3 +1,21 @@
 header.header 
-	.header__container 
-	
+	.header__container
+		a.header__logo
+			svg.header__logo_icon
+				use(xlink:href="#header__logo")
+		.header__menu
+			button.menu__icon.icon-menu(type="button", aria-label="Open menu")
+				span
+			nav.menu
+				ul.menu__list
+					li.menu__item
+						a.menu__link(href="") Home
+					li.menu__item
+						a.menu__link(href="") Skills
+					li.menu__item
+						a.menu__link(href="") About Us
+					li.menu__item
+						a.menu__link(href="") Pricing
+					li.menu__item
+						a.menu__link(href="") Contacts
+		a.header__link Let’s Talk

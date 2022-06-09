@@ -1,0 +1,125 @@
+.skills {
+	&__container {}
+
+	&__title {
+		margin: 0 0 rem(70) 0;
+		text-align: center;
+	}
+
+	&__body {
+		display: grid;
+		gap: rem(30);
+
+		@include mq("phablet") {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		@include mq("tablet-small") {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 1fr auto;
+		}
+
+		@include mq("phablet", max) {
+			grid-template-columns: repeat(1, auto);
+		}
+	}
+
+	&__item {
+		padding: rem(30);
+		background: #F5F5F5;
+		border-radius: rem(10);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+
+		@include mq("tablet-small") {}
+
+		&:first-child {
+			@include mq("tablet-small") {
+				grid-row-start: 1;
+				grid-row-end: 3;
+			}
+		}
+
+		&:last-child {
+			@include mq("tablet-small") {
+				grid-column-start: 2;
+				grid-column-end: 4;
+				grid-row-start: 2;
+				grid-row-end: 3;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+
+				& .skills__img {
+					width: 50%;
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&__img {
+		margin: 0 0 rem(50) 0;
+		text-align: center;
+
+
+		@include mq("tablet-small") {}
+	}
+
+	&__content {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+
+	&__feature {
+		margin: 0 0 rem(20) 0;
+		font-weight: 600;
+		line-height: 1.5;
+		color: #263238;
+
+		@include mq("desktop-wide") {
+			font-size: rem(30);
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			font-size: rem(22);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			font-size: rem(20);
+		}
+
+		@include mq("tablet-small", max) {
+			font-size: rem(18);
+		}
+	}
+
+	&__info {
+		flex: 1 1 auto;
+		margin: 0 0 rem(45) 0;
+		line-height: 1.5;
+
+		@include mq("desktop") {
+			font-size: rem(16);
+		}
+
+		@include mq("phablet", range, "desktop") {
+			font-size: rem(14);
+		}
+
+		@include mq("phablet", max) {
+			font-size: rem(12);
+		}
+
+		p+p {
+			margin: rem(20) 0 0 0;
+		}
+	}
+
+	&__link {}
+}

@@ -66,14 +66,21 @@ body {
 		line-height: 1.5;
 
 		@include mq("desktop-wide") {
+			margin: 0 0 rem(70) 0;
 			font-size: rem(48);
 		}
 
 		@include mq("tablet", range, "desktop-wide") {
+			margin: 0 0 rem(60) 0;
 			font-size: rem(36);
 		}
 
+		@include mq("tablet", max) {
+			margin: 0 0 rem(50) 0;
+		}
+
 		@include mq("phablet", range, "tablet") {
+
 			font-size: rem(30);
 		}
 
@@ -151,4 +158,5 @@ section {
 @import "components/header";
 @import "components/intro";
 @import "components/skills";
+@import "components/about";
 @import "components/footer";

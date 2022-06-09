@@ -2,7 +2,7 @@
 	&__container {}
 
 	&__title {
-		margin: 0 0 rem(70) 0;
+
 		text-align: center;
 	}
 
@@ -103,10 +103,6 @@
 		flex: 1 1 auto;
 		margin: 0 0 rem(45) 0;
 		line-height: 1.5;
-
-		@include mq("desktop") {
-			font-size: rem(16);
-		}
 
 		@include mq("phablet", range, "desktop") {
 			font-size: rem(14);

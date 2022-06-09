@@ -1,5 +1,12 @@
 .intro {
 	padding: rem(130) 0 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include mq("desktop") {
+		padding: rem(100) 0 0 0;
+	}
 
 	&__container {
 		display: flex;
@@ -29,12 +36,17 @@
 		@include mq("tablet-small", range, "tablet") {
 			flex: 0 0 45%;
 		}
+
+		@include mq("tablet-small", max) {
+			text-align: center;
+		}
 	}
 
 	&__title {
 		font-weight: 600;
 		line-height: 1.25;
-		color: #000000;
+		color: #000;
+		position: relative;
 
 		@include mq("desktop-wide") {
 			margin: 0 0 rem(40) 0;
@@ -62,30 +74,6 @@
 			font-size: rem(24);
 		}
 
-		position: relative;
-
-		&::after {
-			content: "\e900";
-			position: absolute;
-			top: 41%;
-			right: 0;
-			@extend %ic;
-			font-size: rem(110);
-
-			@include mq("tablet", range, "desktop-wide") {
-				font-size: rem(100);
-			}
-
-			@include mq("tablet-small", range, "tablet") {
-				top: 30%;
-				font-size: rem(100);
-			}
-
-			@include mq("tablet-small", max) {
-				display: none;
-			}
-		}
-
 		& br {
 			display: none;
 
@@ -93,10 +81,47 @@
 				display: block;
 			}
 		}
+
+		&_icon {
+			position: absolute;
+			top: 41%;
+			right: 0;
+
+			@include mq("tablet-small", range, "desktop-wide") {
+				top: 50%;
+			}
+
+			@include mq("tablet-small", max) {
+				display: none;
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					&:after {
+						color: #f1c40f;
+						transition: color .3s ease 0s;
+					}
+				}
+			}
+
+			&::after {
+				content: "\e900";
+				@extend %ic;
+				font-size: rem(110);
+				transition: color .3s ease 0s;
+
+				@include mq("tablet-small", range, "desktop-wide") {
+					font-size: rem(90);
+				}
+
+				@include mq("tablet-small", range, "tablet") {
+					font-size: rem(70);
+				}
+			}
+		}
 	}
 
 	&__text {
-		color: #8F95A5;
 		line-height: 1.5;
 
 		@include mq("desktop-wide") {
@@ -126,7 +151,7 @@
 		line-height: 1.5;
 
 		@include mq("desktop-wide") {
-			border-radius: 15px;
+			border-radius: rem(15);
 			font-size: rem(36);
 			padding: rem(32) rem(117);
 		}
@@ -146,12 +171,19 @@
 
 		@include mq("phablet", range, "tablet-small") {
 			padding: rem(24) rem(102);
+			width: auto;
 		}
 
 		@include mq("phablet", max) {
 			font-size: rem(16);
 			padding: rem(18) 0;
 			width: 100%;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				// text-decoration: underline;
+			}
 		}
 	}
 
@@ -162,6 +194,14 @@
 
 		@include mq("tablet-small", range, "desktop") {
 			width: 45%;
+		}
+
+		@include mq("tablet", max) {
+			z-index: -1;
+		}
+
+		@include mq("tablet-small", max) {
+			margin: 0 0 rem(50) 0;
 		}
 	}
 }

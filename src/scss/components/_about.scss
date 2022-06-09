@@ -1,0 +1,115 @@
+.about {
+
+	&__container {}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include mq("tablet-small", range, "tablet") {
+			gap: rem(80);
+		}
+
+		@include mq("tablet-small", max) {
+			flex-direction: column-reverse;
+			gap: rem(30);
+		}
+	}
+
+	&__title {
+		margin: 0 0 rem(45) 0;
+
+		@include mq("tablet-small", max) {
+			text-align: center;
+		}
+	}
+
+	&__content {
+		@include mq("tablet") {
+			flex: 0 0 45%;
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			flex: 0 0 50%;
+		}
+
+		@include mq("tablet-small", max) {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__text {
+		margin: 0 0 rem(45) 0;
+
+		@include mq("desktop-wide") {
+			font-size: rem(20);
+		}
+	}
+
+	&__data {
+		display: flex;
+		gap: rem(50);
+
+		@include mq("desktop-wide") {
+			gap: rem(100);
+		}
+
+		@include mq("phablet", range, "tablet-small") {
+			gap: rem(100);
+		}
+
+		@include mq("phablet", max) {
+			flex-direction: column;
+			gap: rem(30);
+		}
+	}
+
+	&__fact {
+		text-align: center;
+	}
+
+	&__count {
+		margin: 0 0 rem(20) 0;
+		line-height: 1.5;
+		font-weight: 600;
+		color: #2A3246;
+
+		@include mq("desktop-wide") {
+			font-size: rem(48);
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			font-size: rem(30);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			font-size: rem(22);
+		}
+
+		@include mq("tablet-small", max) {
+			font-size: rem(24);
+		}
+	}
+
+	&__feature {
+		@include mq("desktop-wide") {
+			font-size: rem(20);
+		}
+
+		@include mq("tablet", max) {
+			font-size: rem(14);
+		}
+	}
+
+	&__img {
+		@include mq("tablet-small", range, "tablet") {
+			width: 40%;
+
+		}
+
+	}
+}

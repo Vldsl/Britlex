@@ -55,6 +55,11 @@ body {
 }
 
 .page {
+	&.active_bg {
+		transition: background-color 0.3s ease 0s;
+		background-color: rgba(7, 34, 47, 0.7);
+	}
+
 	&-title {
 		font-weight: 600;
 		color: #000000;
@@ -68,17 +73,21 @@ body {
 			font-size: rem(36);
 		}
 
-		@include mq("tablet-small", range, "tablet") {
+		@include mq("phablet", range, "tablet") {
 			font-size: rem(30);
+		}
+
+		@include mq("phablet", max) {
+			font-size: rem(24);
 		}
 	}
 
 	&-link {
 		font-weight: 500;
 		line-height: 1.5;
-		color: #FFFFFF;
+		color: #fff;
 		background: #263238;
-		border-radius: 5px;
+		border-radius: rem(5);
 		text-align: center;
 		display: inline-flex;
 		align-items: center;
@@ -108,9 +117,14 @@ body {
 		}
 
 		@include mq("tablet", max) {
-			padding: rem(14) rem(43);
+			padding: rem(14) rem(36);
 		}
 
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba(38, 50, 56, 0.9);
+			}
+		}
 	}
 }
 
@@ -136,4 +150,5 @@ section {
 
 @import "components/header";
 @import "components/intro";
+@import "components/skills";
 @import "components/footer";

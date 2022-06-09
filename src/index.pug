@@ -1,7 +1,6 @@
 doctype html
 html(lang="en")
 	head
-	//- include html/head
 	@@include('html/head.pug', {
 		"title": "Britlex"
 	})
@@ -11,7 +10,6 @@ html(lang="en")
 			include html/header
 			main.page
 				include html/intro
+				include html/skills
 			include html/footer
 		script(src="js/app.min.js")
-
-		//- Добавить интересный ховер на кнопки

@@ -62,7 +62,7 @@ body {
 
 	&-title {
 		font-weight: 600;
-		color: #000000;
+		color: #000;
 		line-height: 1.5;
 
 		@include mq("desktop-wide") {
@@ -99,6 +99,7 @@ body {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		cursor: pointer;
 
 		@include mq("desktop-wide") {
 			font-size: rem(20);
@@ -160,4 +161,5 @@ section {
 @import "components/skills";
 @import "components/about";
 @import "components/pricing";
+@import "components/contact";
 @import "components/footer";

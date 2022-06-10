@@ -14,7 +14,7 @@
 
 :focus,
 :active {
-	outline: none;
+	// outline: none;
 }
 
 a {
@@ -30,7 +30,7 @@ a {
 
 	&:focus,
 	&:active {
-		outline: none;
+		// outline: none;
 	}
 }
 
@@ -77,7 +77,7 @@ select {
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
-	outline: none;
+	// outline: none;
 	color: inherit;
 }
 
@@ -102,7 +102,7 @@ input:focus,
 input:active,
 button:focus,
 button:active {
-	outline: none;
+	// outline: none;
 }
 
 button::-moz-focus-inner {

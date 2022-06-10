@@ -1,2 +1,74 @@
 .footer {
+	&__container {}
+
+	&__body {
+		padding-top: rem(15);
+		padding-bottom: rem(15);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-top: 1px solid #C4C4C4;
+
+		@include mq("phablet", max) {
+			flex-direction: column;
+			gap: rem(15);
+		}
+
+	}
+
+	&__logo {
+		&_icon {
+			display: block;
+			width: rem(106);
+			height: rem(54);
+			fill: #939393;
+		}
+	}
+
+	&__rights {}
+}
+
+.rights {
+	display: flex;
+	align-items: center;
+
+	&__item {
+		&+& {
+			margin: 0 0 0 rem(5);
+
+			&:before {
+				content: "•";
+			}
+		}
+	}
+
+	&__link {
+		color: #8F95A5;
+
+		@include mq("desktop-wide") {
+			font-size: rem(24);
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			font-size: rem(16);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			font-size: rem(13);
+		}
+
+		@include mq("phablet", range, "tablet-small") {
+			font-size: rem(12);
+		}
+
+		@include mq("phablet", max) {
+			font-size: rem(11);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }

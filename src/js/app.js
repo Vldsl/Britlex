@@ -42,3 +42,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		replaceBtn();
 	}
 });
+
+// 
+document.addEventListener('DOMContentLoaded', () => {
+	const contactTitle = document.querySelector('.contact__title');
+	const contactContent = document.querySelector('.contact__content');
+	const contactContainer = document.querySelector('.contact__container');
+	if (contactTitle) {
+		function replaceBtn() {
+			if (document.documentElement.offsetWidth <= 768) {
+				contactContainer.prepend(contactTitle);
+			} else {
+				contactContent.prepend(contactTitle);
+			}
+		}
+		window.addEventListener('resize', replaceBtn);
+		replaceBtn();
+	}
+});

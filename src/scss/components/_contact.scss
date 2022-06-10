@@ -1,0 +1,137 @@
+.contact {
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include mq("tablet-small", max) {
+			flex-direction: column;
+			gap: rem(30);
+		}
+	}
+
+	&__img {
+		@include mq("tablet-small", range, "desktop") {
+			width: 40%;
+		}
+	}
+
+	&__content {
+		@include mq("tablet-small") {
+			flex: 0 1 50%;
+		}
+
+		@include mq("tablet-small", max) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__title {}
+
+	&__text {
+		margin: 0 0 rem(50) 0;
+		line-height: 1.5;
+
+		@include mq("desktop-wide") {
+			font-size: rem(20);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			font-size: rem(14);
+		}
+
+		@include mq("phablet", max) {
+			font-size: rem(14);
+		}
+	}
+
+	&__form {
+		display: flex;
+		align-items: center;
+		gap: rem(15);
+
+		@include mq("tablet-small", max) {
+			width: 100%;
+			justify-content: center;
+		}
+
+		@include mq("phablet", max) {
+			flex-direction: column;
+		}
+	}
+
+	&__email {
+		flex: 0 1 62%;
+		border: 1px solid #8F95A5;
+		border-radius: 10px;
+		background-color: transparent;
+		color: #000;
+
+		&::placeholder {}
+
+		@include mq("desktop-wide") {
+			padding: rem(25) rem(30);
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			padding: rem(20) rem(30);
+			font-size: rem(14);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			padding: rem(16) rem(25);
+			font-size: rem(12);
+		}
+
+		@include mq("phablet", range, "tablet-small") {
+			padding: rem(20) rem(25);
+			font-size: rem(13);
+		}
+
+		@include mq("phablet", max) {
+			padding: rem(16) rem(25);
+			font-size: rem(12);
+			width: 100%;
+		}
+	}
+
+	&__button {
+		background: #263238;
+		border-radius: 10px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 500;
+		line-height: 1.5;
+		color: #fff;
+
+		@include mq("desktop-wide") {
+			padding: rem(25) rem(80);
+			font-size: rem(20);
+		}
+
+		@include mq("tablet", range, "desktop-wide") {
+			padding: rem(18) rem(56);
+		}
+
+		@include mq("tablet-small", range, "tablet") {
+			padding: rem(15) rem(40);
+			font-size: rem(13);
+		}
+
+		@include mq("phablet", range, "tablet-small") {
+			padding: rem(18) rem(56);
+			font-size: rem(16);
+		}
+
+		@include mq("phablet", max) {
+			width: 100%;
+			font-size: rem(14);
+			padding: rem(20) 0;
+		}
+	}
+}

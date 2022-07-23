@@ -1,22 +1,22 @@
 header.header 
 	.header__container
-		a.header__logo
-			svg.header__logo_icon
-				use(xlink:href="#header__logo")
-		.header__menu
+		a.header__logo.logo
+			svg.logo__icon
+				use(xlink:href="#logo")
+		nav.header__menu.menu
 			button.menu__icon.icon-menu(type="button", aria-label="Open menu")
 				span
-			nav.menu
+			.menu__body
 				ul.menu__list
 					li.menu__item
-						a.menu__link(href="") Home
+						a.menu__link(href="", data-goto=".intro") Home
 					li.menu__item
-						a.menu__link(href="") Skills
+						a.menu__link(href="", data-goto=".skills") Skills
 					li.menu__item
-						a.menu__link(href="") About Us
+						a.menu__link(href="", data-goto=".about") About Us
 					li.menu__item
-						a.menu__link(href="") Pricing
+						a.menu__link(href="", data-goto=".pricing") Pricing
 					li.menu__item
-						a.menu__link(href="") Contacts
+						a.menu__link(href="", data-goto=".contact") Contacts
 				button.menu__close(type="button", aria-label="Close menu")
-		a.header__link(href="")  Let’s Talk
+		a.header__link(href="#contact")  Let’s Talk

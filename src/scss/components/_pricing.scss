@@ -115,7 +115,6 @@
 	}
 
 	&__count {
-		line-height: 1.5;
 		color: #263238;
 
 		@include mq("desktop-wide") {
@@ -136,7 +135,6 @@
 	}
 
 	&__interval {
-		line-height: 1.5;
 		color: #546269;
 
 		@include mq("desktop-wide") {

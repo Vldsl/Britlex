@@ -17,12 +17,7 @@
 	}
 
 	&__logo {
-		&_icon {
-			display: block;
-			width: rem(106);
-			height: rem(54);
-			fill: #939393;
-		}
+		.logo__icon {}
 	}
 
 	&__rights {}

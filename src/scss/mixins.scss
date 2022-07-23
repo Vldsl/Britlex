@@ -33,10 +33,7 @@
 }
 
 /* -------------------------------- */
-@mixin font-source-sans($size: false,
-	$lh: false,
-	$weight: 400,
-	$colour: false) {
+@mixin font-source-sans($size: false, $lh: false, $weight: 400, $colour: false) {
 	@if $size {
 		font-size: $size;
 	}
@@ -57,11 +54,9 @@
 /* -------------------------------- */
 $breakpoints: (
 	"phone": em(320),
-	// "phone-wide": em(480),
 	"phablet": em(575),
 	"tablet-small": em(767),
 	"tablet": em(992),
-	// "tablet-wide": em(1024),
 	"desktop": em(1280),
 	"desktop-wide": em(1600),
 );
@@ -92,32 +87,3 @@ $breakpoints: (
 		@error 'Не указано значение для `#{$breakpoints}`';
 	}
 }
-
-@include mq("desktop-wide") {}
-
-@include mq("desktop", range, "desktop-wide") {}
-
-@include mq("tablet", range, "desktop") {}
-
-@include mq("tablet-small", range, "tablet") {}
-
-@include mq("phablet", range, "tablet-small") {}
-
-@include mq("phone", range, "phablet") {}
-
-@include mq("phone", max) {}
-
-//========================================================================================================================================================
-@mixin af($property,
-	$startSize,
-	$minSize,
-	$widthFrom: $maxWidthContainer,
-	$widthTo: $minWidthLayout) {
-	$minSizeValue: rem($minSize);
-	$widthTo: math.div($widthTo, 16);
-	$widthFrom: math.div($widthFrom, 16);
-	$addSize: math.div($startSize - $minSize, 16);
-	#{$property}: calc(#{$minSizeValue} + #{$addSize} * (((100vw - #{$widthTo + rem})) / ((#{$widthFrom - $widthTo}))));
-}
-
-//========================================================================================================================================================

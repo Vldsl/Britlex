@@ -75,7 +75,6 @@
 
 	&__count {
 		margin: 0 0 rem(20) 0;
-		line-height: 1.5;
 		font-weight: 600;
 		color: #2A3246;
 
@@ -109,8 +108,6 @@
 	&__img {
 		@include mq("tablet-small", range, "tablet") {
 			width: 40%;
-
 		}
-
 	}
 }

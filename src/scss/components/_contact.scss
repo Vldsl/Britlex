@@ -34,7 +34,6 @@
 
 	&__text {
 		margin: 0 0 rem(50) 0;
-		line-height: 1.5;
 
 		@include mq("desktop-wide") {
 			font-size: rem(20);
@@ -71,8 +70,6 @@
 		background-color: transparent;
 		color: #000;
 
-		&::placeholder {}
-
 		@include mq("desktop-wide") {
 			padding: rem(25) rem(30);
 		}
@@ -101,12 +98,11 @@
 
 	&__button {
 		background: #263238;
-		border-radius: 10px;
+		border-radius: rem(10);
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		font-weight: 500;
-		line-height: 1.5;
 		color: #fff;
 
 		@include mq("desktop-wide") {

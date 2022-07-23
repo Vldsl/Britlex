@@ -284,6 +284,7 @@ section {
 }
 
 .header.fixed {
+  padding: 0;
   position: fixed;
   background-color: #fff;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
